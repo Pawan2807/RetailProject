@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        LABS = credentials('labcreds')
+        LABS = credentials('lab')
     }
 
     stages {
@@ -28,7 +28,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-               sh 'sshpass -p $LABS_PSW scp -o StrictHostKeyChecking=no -r . $LABS_USR@g02.itversity.com:/home/itv005857/retailproject'
+               sh 'sshpass -p $LABS_PSW scp -o StrictHostKeyChecking=no -r . $LABS_USR@g02.itversity.com:/home/itv013301/retailproject'
             }
         }
 	
